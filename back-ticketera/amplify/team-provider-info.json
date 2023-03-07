@@ -14,6 +14,16 @@
     "categories": {
       "api": {
         "eventostestapp": {}
+      },
+      "function": {
+        "eventostestapp59acc1d8": {
+          "deploymentBucketName": "amplify-eventostestapp-dev-162058-deployment",
+          "s3Key": "amplify-builds/eventostestapp59acc1d8-574273467377386a6b49-build.zip"
+        },
+        "prueba": {
+          "deploymentBucketName": "amplify-eventostestapp-dev-162058-deployment",
+          "s3Key": "amplify-builds/prueba-755a554c62356b62576c-build.zip"
+        }
       }
     }
   }

@@ -18,5 +18,51 @@
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
     }
+  },
+  "function": {
+    "eventostestapp59acc1d8": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "prueba": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_eventostestapp59acc1d8_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "eventostestapp59acc1d8"
+        }
+      ]
+    },
+    "AMPLIFY_function_eventostestapp59acc1d8_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "eventostestapp59acc1d8"
+        }
+      ]
+    },
+    "AMPLIFY_function_prueba_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "prueba"
+        }
+      ]
+    },
+    "AMPLIFY_function_prueba_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "prueba"
+        }
+      ]
+    }
   }
 }
