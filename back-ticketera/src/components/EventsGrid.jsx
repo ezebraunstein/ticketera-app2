@@ -20,23 +20,6 @@ const EventsGrid = () => {
         fetchEvents();
     }, []);
 
-    // return (
-    //     <div id="boxes">
-    //         <div className="container">
-    //             {events.map((event, index) => (
-    //                 //<div key={event.id} className="box">
-    //                 <div key={event.id} className="box" style={{ marginRight: (index + 1) % 4 === 0 ? 0 : "20px" }}>
-    //                     <img src={event.imagenBanner} alt={event.nombreEvento} />
-    //                     <h3>{event.nombreEvento}</h3>
-    //                     <p>{event.descripcion}</p>
-    //                     <button href={event.link} className="btnBuy">
-    //                         <i className="icon-ticket"></i>Comprar Tickets
-    //                     </button>
-    //                 </div>
-    //             ))}
-    //         </div>
-    //     </div>
-    // );
     return (
         <div id="boxes">
             <h1 className="featuredEvents">🎉Eventos Destacados🎉</h1>
