@@ -1,6 +1,7 @@
 import { API, graphqlOperation } from "aws-amplify";
 import { listEventos } from "../graphql/queries";
 import { useState, useEffect } from "react";
+import "./Slider.css";
 
 const Slider = () => {
   const [events, setEvents] = useState([]);
@@ -8,10 +9,10 @@ const Slider = () => {
     try {
       const eventsData = await API.graphql(graphqlOperation(listEventos));
       const eventsList = eventsData.data.listEventos.items;
-      console.log("Lista de Usuarios", eventsList);
+      console.log("", eventsList);
       setEvents(eventsList);
     } catch (error) {
-      console.log("error on fetching users", error);
+      console.log("", error);
     }
   };
 
