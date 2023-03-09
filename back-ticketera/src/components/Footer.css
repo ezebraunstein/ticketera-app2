@@ -1,0 +1,15 @@
+footer {
+    font-family: "proxima-soft", "Proxima Soft", "Proxima Nova Soft", Helvetica,
+    Arial, sans-serif;
+    background: #28307F;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    align-self: flex-end;
+    text-align: right;
+  }
+
+.logo {
+    display: inline-block;
+  }
