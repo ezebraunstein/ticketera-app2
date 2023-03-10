@@ -12,6 +12,7 @@ function App() {
 
     const [events, setEvents] = useState([]);
     const [eventData, setEventsData] = useState({});
+    const [bannerURL, setBannerURL] = useState('');
 
     useEffect(() => {
         fetchEvents();
@@ -47,21 +48,34 @@ function App() {
         );
     };
 
+    const fetchBanner = async idx => {
+        const bannerFilePath = events[idx].filePath;
+        try {
+            const fileAccessURL = await Storage.get(bannerFilePath, { expires: 60 });
+            console.log('access url', fileAccessURL);
+            setBannerURL(fileAccessURL);
+            return;
+        } catch (error) {
+            console.error('error accessing the file from s3', error);
+            setBannerURL('');
+        }
+    };
+
     return (
         <div className="App">
             <table></table>
             <h1>Lista de Usuarios</h1>
             <div className="eventList">
-                {events.map((events) => {
+                {events.map((events, idx) => {
                     return (
-                        <div className="event" key={events.id}>
+                        <div className="event" key={`events${idx}`}>
                             <h2>{events.nombreEvento}</h2>
                             <h2>{events.fechaInicio}</h2>
                             <h2>{events.fechaFin}</h2>
                             <h2>{events.fechaAlta}</h2>
                             <h2>{events.fechaBaja}</h2>
                             <h2>{events.descripcion}</h2>
-                            <h2>{events.imagenBanner}</h2>
+                            <h2>{() => fetchBanner(idx)}</h2>
                             <h2>{events.imagenMini}</h2>
                         </div>
                     );

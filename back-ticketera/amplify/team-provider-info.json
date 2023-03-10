@@ -24,6 +24,12 @@
           "deploymentBucketName": "amplify-eventostestapp-dev-162058-deployment",
           "s3Key": "amplify-builds/prueba-755a554c62356b62576c-build.zip"
         }
+      },
+      "auth": {
+        "eventosTestApp": {}
+      },
+      "storage": {
+        "eventosAppStorage": {}
       }
     }
   }

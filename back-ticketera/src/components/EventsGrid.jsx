@@ -1,4 +1,4 @@
-import { API, graphqlOperation } from "aws-amplify";
+import { API, graphqlOperation, Storage } from "aws-amplify";
 import { listEventos } from "../graphql/queries";
 import { useState, useEffect } from "react";
 import "./EventsGrid.css";
@@ -9,8 +9,14 @@ const EventsGrid = () => {
         try {
             const eventsData = await API.graphql(graphqlOperation(listEventos));
             const eventsList = eventsData.data.listEventos.items;
-            console.log("", eventsList);
-            setEvents(eventsList);
+            const eventsWithImages = await Promise.all(
+                eventsList.map(async (event) => {
+                    const imageUrl = await Storage.get(event.imagenBanner, { expires: 60 });
+                    event.imageUrl = imageUrl;
+                    return event;
+                })
+            );
+            setEvents(eventsWithImages);
         } catch (error) {
             console.log("", error);
         }
@@ -26,7 +32,7 @@ const EventsGrid = () => {
             <div className="container" style={{ display: "flex", flexWrap: "wrap" }}>
                 {events.map((event) => (
                     <div key={event.id} className="box" style={{ flexBasis: "25%", marginBottom: "20px" }}>
-                        <img src={event.imagenBanner} alt={event.nombreEvento} />
+                        <img src={event.imageUrl} alt={event.nombreEvento} />
                         <h3>{event.nombreEvento}</h3>
                         <p>{event.descripcion}</p>
                         <button href={event.link} className="btnBuy">
@@ -37,8 +43,6 @@ const EventsGrid = () => {
             </div>
         </div>
     );
-
-
 };
 
 export default EventsGrid;

@@ -32,8 +32,8 @@ type Evento @model @auth(rules: [{ allow: public }]) {
   fechaAlta: AWSDateTime!
   fechaBaja: AWSDateTime!
   descripcion: String
-  imagenBanner: AWSURL
-  imagenMini: AWSURL
+  imagenBanner: String
+  imagenMini: String
   TipoEntradas: [TipoEntrada] @hasMany(indexName: "byEvento", fields: ["id"])
   usuarioID: ID! @index(name: "byUsuario")
 }
