@@ -83,7 +83,6 @@ svg {
 .slider-frame img {
   width: 100%;
   position: relative;
-  /* bottom: 200px; */
 }
 
 @keyframes slide {
@@ -185,7 +184,6 @@ svg {
   transform: scale(0.1, 1);
 }
 
-/* lo nuevo a partir de acá */
 
 .featuredEvents {
   padding-top: 5%;
@@ -249,13 +247,11 @@ svg {
   font-weight: bold;
   font-size: 14px;
   text-align: center;
-  /* background: #0bb475; */
   background: #4654e1;
   display: block;
   float: left;
   padding: 10px 15px;
   width: auto;
-  /* color: #FFF; */
   color: #000;
   text-decoration: none;
   transition: 0.3s;

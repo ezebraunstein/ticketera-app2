@@ -29,7 +29,6 @@ function App() {
     };
 
     const uploadEvent = async () => {
-        debugger;
         const createEventInput = {
             id: uuid(),
             nombreEvento: eventData.nombreEvento,
