@@ -60,7 +60,7 @@ svg {
   padding: 10px;
 }
 
-.slider-frame {
+/* .slider-frame {
   width: 100%;
   height: 400px;
   margin: 0 auto 0;
@@ -83,7 +83,7 @@ svg {
 .slider-frame img {
   width: 100%;
   position: relative;
-  /* bottom: 200px; */
+  
 }
 
 @keyframes slide {
@@ -114,7 +114,11 @@ svg {
   100% {
     margin-left: -300%;
   }
-}
+} */
+
+
+
+
 
 .logo {
   display: flex;
@@ -136,14 +140,17 @@ svg {
   margin-left: auto;
   margin-right: 0;
 }
+
 .btn-one {
   color: #fff;
   transition: all 0.3s;
   position: relative;
 }
+
 .btn-one span {
   transition: all 0.3s;
 }
+
 .btn-one::before {
   content: "";
   position: absolute;
@@ -162,13 +169,16 @@ svg {
   border-bottom-color: rgba(255, 255, 255, 0.5);
   transform: scale(0.1, 1);
 }
+
 .btn-one:hover span {
   letter-spacing: 2px;
 }
+
 .btn-one:hover::before {
   opacity: 1;
   transform: scale(1, 1);
 }
+
 .btn-one::after {
   content: "";
   position: absolute;
@@ -180,6 +190,7 @@ svg {
   transition: all 0.3s;
   background-color: rgba(255, 255, 255, 0.1);
 }
+
 .btn-one:hover::after {
   opacity: 0;
   transform: scale(0.1, 1);

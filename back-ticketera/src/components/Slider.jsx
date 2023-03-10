@@ -1,4 +1,4 @@
-import { API, graphqlOperation } from "aws-amplify";
+import { API, graphqlOperation, Storage } from "aws-amplify";
 import { listEventos } from "../graphql/queries";
 import { useState, useEffect } from "react";
 import "./Slider.css";
@@ -9,8 +9,14 @@ const Slider = () => {
     try {
       const eventsData = await API.graphql(graphqlOperation(listEventos));
       const eventsList = eventsData.data.listEventos.items;
-      console.log("", eventsList);
-      setEvents(eventsList);
+      const eventsWithImages = await Promise.all(
+        eventsList.map(async (event) => {
+          const imageUrl = await Storage.get(event.imagenBanner);
+          event.imageUrl = imageUrl;
+          return event;
+        })
+      );
+      setEvents(eventsWithImages.slice(-4));
     } catch (error) {
       console.log("", error);
     }
@@ -23,10 +29,11 @@ const Slider = () => {
   return (
     <div className="slider-frame">
       <ul>
-        {events.map((events) => {
+        {/* {events.map((event) => { */}
+        {events.slice(0, 4).map((event, index) => {
           return (
             <li>
-              <img className="sliderImg" src={events.imagenBanner} alt="" />
+              <img className="sliderImg" src={event.imageUrl} alt="" />
             </li>
           );
         })}
@@ -36,3 +43,5 @@ const Slider = () => {
 };
 
 export default Slider;
+
+
