@@ -56,7 +56,7 @@ function AddEvento() {
 
     // Upload banner file to S3 bucket
     if (bannerFile) {
-      const bannerKey = `events/${createEventInput.id}/banner.jpeg`;
+      const bannerKey = `events/${createEventInput.id}/banner`;
       await Storage.put(bannerKey, bannerFile, {
         contentType: 'image/jpeg'
       });
@@ -65,7 +65,7 @@ function AddEvento() {
 
     // Upload mini file to S3 bucket
     if (miniFile) {
-      const miniKey = `events/${createEventInput.id}/mini.jpeg`;
+      const miniKey = `events/${createEventInput.id}/mini`;
       await Storage.put(miniKey, miniFile, {
         contentType: 'image/jpeg'
       });
