@@ -267,3 +267,7 @@ svg {
   color: white;
   background-color: #222c92;
 }
+
+.hide {
+  display: none;
+}

@@ -7,6 +7,7 @@ import EventsGrid from "./components/EventsGrid";
 import Footer from "./components/Footer";
 import awsExports from "./aws-exports";
 import { Amplify } from "aws-amplify";
+
 Amplify.configure(awsExports);
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
       <Header />
       <Slider />
       <SearchBar />
-      <EventsGrid />
+      <EventsGrid /> 
       <Footer />
     </div>
   );

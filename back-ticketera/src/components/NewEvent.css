@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Soft:wght@300;400;600&display=swap');
+
+label, input, button {
+    font-family: "Proxima Soft", sans-serif;
+  }
+  
+  label {
+    color: #4654e1;
+  }
+  
+  input {
+    background-color: #fff;
+    color: #4654e1;
+    border: 1px solid #4654e1;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #4654e1;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #3940a1;
+  }
