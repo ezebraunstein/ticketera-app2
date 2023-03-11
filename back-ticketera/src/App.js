@@ -1,6 +1,6 @@
 import "./App.css";
-import { useState, useEffect } from "react";
-import { Header } from "./components/Header";
+import { useState } from "react";
+import Header from "./components/Header";
 import Slider from "./components/Slider";
 import SearchBar from "./components/SearchBar";
 import EventsGrid from "./components/EventsGrid";
@@ -9,6 +9,7 @@ import NewEvent from "./components/NewEvent";
 import Footer from "./components/Footer";
 import awsExports from "./aws-exports";
 import { Amplify } from "aws-amplify";
+
 
 Amplify.configure(awsExports);
 
@@ -19,7 +20,7 @@ function App() {
   const toggleEventsDisplay = () => {
     setShouldDisplayEvents(!displayEvents);
   };
-  
+
   return (
     <div className="App">
       <Header onButtonClick={toggleEventsDisplay} />
@@ -29,7 +30,7 @@ function App() {
         <EventsGrid />
       </ComponentWrapper>
       <ComponentWrapper optionDisplay={!displayEvents}>
-        <NewEvent /> 
+        <NewEvent />
       </ComponentWrapper>
       <Footer />
     </div>
