@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header onButtonClick={toggleEventsDisplay} />
+      <Header onButtonClick={toggleEventsDisplay} displayEvents={displayEvents} />
       <ComponentWrapper optionDisplay={displayEvents}>
         <Slider />
         <SearchBar />
@@ -38,4 +38,3 @@ function App() {
 }
 
 export default App;
-

@@ -16,3 +16,9 @@ footer {
 .logo {
   display: inline-block;
 }
+
+.footerText {
+  position: relative;
+  bottom: 0.4em;
+  right: 1em;
+}
