@@ -1,10 +1,10 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { listEventos } from "./graphql/queries";
-import { createEvento } from "./graphql/mutations";
+import { listEventos } from "../graphql/queries";
+import { createEvento } from "../graphql/mutations";
 import { v4 as uuid } from "uuid";
 import { Amplify, API, graphqlOperation } from "aws-amplify";
-import awsExports from "./aws-exports";
+import awsExports from "../aws-exports";
 
 Amplify.configure(awsExports);
 
@@ -120,9 +120,7 @@ function App() {
                     id="imagenBanner"
                     placeholder="Imagen Banner"
                     value={eventData.imagenBanner}
-                    onChange={(e) =>
-                        setEventsData({ ...eventData, imagenBanner: e.target.value })
-                    }
+                    onChange={(e) => setEventsData({ ...eventData, imagenBanner: e.target.value })}
                 ></input>
                 <input
                     id="imagenMini"
