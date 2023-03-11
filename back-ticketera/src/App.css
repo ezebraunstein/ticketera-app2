@@ -31,7 +31,7 @@ header {
     Arial, sans-serif;
 }
 
-input {
+.searchInput {
   all: unset;
   font: 16px system-ui;
   color: #fff;
@@ -45,14 +45,14 @@ input {
   opacity: 0.7;
 }
 
-button {
+.searchButton {
   all: unset;
   cursor: pointer;
   width: 44px;
   height: 44px;
 }
 
-svg {
+.searchSvg {
   color: #fff;
   fill: currentColor;
   width: 48px;
@@ -144,6 +144,7 @@ svg {
   color: #fff;
   transition: all 0.3s;
   position: relative;
+  border-radius: 5px;
 }
 
 .btn-one span {
@@ -167,6 +168,7 @@ svg {
   border-top-color: rgba(255, 255, 255, 0.5);
   border-bottom-color: rgba(255, 255, 255, 0.5);
   transform: scale(0.1, 1);
+  border-radius: 5px;
 }
 
 .btn-one:hover span {
@@ -188,6 +190,7 @@ svg {
   z-index: 1;
   transition: all 0.3s;
   background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
 }
 
 .btn-one:hover::after {

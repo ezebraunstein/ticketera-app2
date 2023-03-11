@@ -219,70 +219,72 @@ function AddEvento() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
+      <label className='labelEvent'>
         Nombre Evento:
-        <input
+        <input className='inputEvent'
           type="text"
           name="nombreEvento"
           value={eventData.nombreEvento}
           onChange={handleInputChange}
         />
       </label>
-      <label>
+      <label className='labelEvent'>
         Fecha Inicio:
-        <input
+        <input className='inputEvent'
           type="date"
           name="fechaInicio"
           value={eventData.fechaInicio}
           onChange={handleInputChange}
         />
       </label>
-      <label>
+      <label className='labelEvent'>
         Fecha Fin:
-        <input
+        <input className='inputEvent'
           type="date"
           name="fechaFin"
           value={eventData.fechaFin}
           onChange={handleInputChange}
         />
       </label>
-      <label>
+      <label className='labelEvent'>
         Descripción:
-        <input
+        <input className='inputEvent'
           type="text"
           name="descripcion"
           value={eventData.descripcion}
           onChange={handleInputChange}
         />
       </label>
-      <label>
+      <label className='labelEvent'>
         Imagen Banner:
-        <input
+        <input className='inputEvent'
           type="file"
           accept=".jpg"
           name={eventData.bannerKey}
           onChange={handleFileChange}
         />
       </label>
-      <label>
+      <label className='labelEvent'>
         Imagen Mini:
-        <input
+        <input className='inputEvent'
           type="file"
           accept=".jpg"
           name={eventData.miniKey}
           onChange={handleFileChange}
         />
       </label>
-      <label>
+      <label className='labelEvent'>
         Usuario ID:
-        <input
+        <input className='inputEvent'
           type="text"
           name={"usuarioID"}
           value={eventData.usuarioID}
           onChange={handleInputChange}
         />
       </label>
-      <button type="submit">Agregar Evento</button>
+      <label className='labelEvent'>
+        <button className='buttonEvent' type="submit">Agregar Evento</button>
+      </label>
     </form>
   );
 }
