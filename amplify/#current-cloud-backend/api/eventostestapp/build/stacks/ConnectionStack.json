@@ -1,0 +1,333 @@
+{
+  "Resources": {
+    "TipoEntradaTicketsauth0FunctionTipoEntradaTicketsauth0FunctionAppSyncFunction6D3E3EB6": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "TipoEntradaTicketsauth0Function",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/TipoEntrada.Tickets.auth.1.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson({})"
+      }
+    },
+    "TipoEntradaTicketsDataResolverFnTipoEntradaTicketsDataResolverFnAppSyncFunction7FC94E84": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackTicketNestedStackTicketNestedStackResourceAE3221EBOutputstransformerrootstackTicketTicketDataSourceC7B3A891Name"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "TipoEntradaTicketsDataResolverFn",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/TipoEntrada.Tickets.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/TipoEntrada.Tickets.res.vtl"
+            ]
+          ]
+        }
+      }
+    },
+    "TipoEntradaTicketsResolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "FieldName": "Tickets",
+        "TypeName": "TipoEntrada",
+        "Kind": "PIPELINE",
+        "PipelineConfig": {
+          "Functions": [
+            {
+              "Fn::GetAtt": [
+                "TipoEntradaTicketsauth0FunctionTipoEntradaTicketsauth0FunctionAppSyncFunction6D3E3EB6",
+                "FunctionId"
+              ]
+            },
+            {
+              "Fn::GetAtt": [
+                "TipoEntradaTicketsDataResolverFnTipoEntradaTicketsDataResolverFnAppSyncFunction7FC94E84",
+                "FunctionId"
+              ]
+            }
+          ]
+        },
+        "RequestMappingTemplate": {
+          "Fn::Join": [
+            "",
+            [
+              "$util.qr($ctx.stash.put(\"typeName\", \"TipoEntrada\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"Tickets\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              {
+                "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+              },
+              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              {
+                "Ref": "referencetotransformerrootstackTicketNestedStackTicketNestedStackResourceAE3221EBOutputstransformerrootstackTicketTicketTable5982A955Ref"
+              },
+              "\"))\n$util.toJson({})"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
+      }
+    },
+    "EventoTipoEntradasDataResolverFnEventoTipoEntradasDataResolverFnAppSyncFunction26BAC6DA": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackTipoEntradaNestedStackTipoEntradaNestedStackResourceA110B116OutputstransformerrootstackTipoEntradaTipoEntradaDataSourceD2D7EAABName"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "EventoTipoEntradasDataResolverFn",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Evento.TipoEntradas.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Evento.TipoEntradas.res.vtl"
+            ]
+          ]
+        }
+      }
+    },
+    "EventoTipoEntradasResolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "FieldName": "TipoEntradas",
+        "TypeName": "Evento",
+        "Kind": "PIPELINE",
+        "PipelineConfig": {
+          "Functions": [
+            {
+              "Fn::GetAtt": [
+                "TipoEntradaTicketsauth0FunctionTipoEntradaTicketsauth0FunctionAppSyncFunction6D3E3EB6",
+                "FunctionId"
+              ]
+            },
+            {
+              "Fn::GetAtt": [
+                "EventoTipoEntradasDataResolverFnEventoTipoEntradasDataResolverFnAppSyncFunction26BAC6DA",
+                "FunctionId"
+              ]
+            }
+          ]
+        },
+        "RequestMappingTemplate": {
+          "Fn::Join": [
+            "",
+            [
+              "$util.qr($ctx.stash.put(\"typeName\", \"Evento\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"TipoEntradas\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              {
+                "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+              },
+              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              {
+                "Ref": "referencetotransformerrootstackTipoEntradaNestedStackTipoEntradaNestedStackResourceA110B116OutputstransformerrootstackTipoEntradaTipoEntradaTable399654B5Ref"
+              },
+              "\"))\n$util.toJson({})"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
+      }
+    },
+    "UsuarioEventosDataResolverFnUsuarioEventosDataResolverFnAppSyncFunctionD2D21C09": {
+      "Type": "AWS::AppSync::FunctionConfiguration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "DataSourceName": {
+          "Ref": "referencetotransformerrootstackEventoNestedStackEventoNestedStackResource95B4975DOutputstransformerrootstackEventoEventoDataSourceEF64DD00Name"
+        },
+        "FunctionVersion": "2018-05-29",
+        "Name": "UsuarioEventosDataResolverFn",
+        "RequestMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Usuario.Eventos.req.vtl"
+            ]
+          ]
+        },
+        "ResponseMappingTemplateS3Location": {
+          "Fn::Join": [
+            "",
+            [
+              "s3://",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentBucket7592718ARef"
+              },
+              "/",
+              {
+                "Ref": "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref"
+              },
+              "/resolvers/Usuario.Eventos.res.vtl"
+            ]
+          ]
+        }
+      }
+    },
+    "UsuarioEventosResolver": {
+      "Type": "AWS::AppSync::Resolver",
+      "Properties": {
+        "ApiId": {
+          "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+        },
+        "FieldName": "Eventos",
+        "TypeName": "Usuario",
+        "Kind": "PIPELINE",
+        "PipelineConfig": {
+          "Functions": [
+            {
+              "Fn::GetAtt": [
+                "TipoEntradaTicketsauth0FunctionTipoEntradaTicketsauth0FunctionAppSyncFunction6D3E3EB6",
+                "FunctionId"
+              ]
+            },
+            {
+              "Fn::GetAtt": [
+                "UsuarioEventosDataResolverFnUsuarioEventosDataResolverFnAppSyncFunctionD2D21C09",
+                "FunctionId"
+              ]
+            }
+          ]
+        },
+        "RequestMappingTemplate": {
+          "Fn::Join": [
+            "",
+            [
+              "$util.qr($ctx.stash.put(\"typeName\", \"Usuario\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"Eventos\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+              {
+                "Ref": "referencetotransformerrootstackGraphQLAPI20497F53ApiId"
+              },
+              "\"))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+              {
+                "Ref": "referencetotransformerrootstackEventoNestedStackEventoNestedStackResource95B4975DOutputstransformerrootstackEventoEventoTable82D83D50Ref"
+              },
+              "\"))\n$util.toJson({})"
+            ]
+          ]
+        },
+        "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)"
+      }
+    }
+  },
+  "Parameters": {
+    "referencetotransformerrootstackGraphQLAPI20497F53ApiId": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackGraphQLAPINONEDS2BA9D1C8Name": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackTicketNestedStackTicketNestedStackResourceAE3221EBOutputstransformerrootstackTicketTicketDataSourceC7B3A891Name": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackTicketNestedStackTicketNestedStackResourceAE3221EBOutputstransformerrootstackTicketTicketTable5982A955Ref": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackTipoEntradaNestedStackTipoEntradaNestedStackResourceA110B116OutputstransformerrootstackTipoEntradaTipoEntradaDataSourceD2D7EAABName": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackTipoEntradaNestedStackTipoEntradaNestedStackResourceA110B116OutputstransformerrootstackTipoEntradaTipoEntradaTable399654B5Ref": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackEventoNestedStackEventoNestedStackResource95B4975DOutputstransformerrootstackEventoEventoDataSourceEF64DD00Name": {
+      "Type": "String"
+    },
+    "referencetotransformerrootstackEventoNestedStackEventoNestedStackResource95B4975DOutputstransformerrootstackEventoEventoTable82D83D50Ref": {
+      "Type": "String"
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-eventostestapp-dev-162058-authRole",
+      "UnauthRoleArn": "arn:aws:iam::943842037059:role/amplify-eventostestapp-dev-162058-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::943842037059:role/amplify-eventostestapp-dev-162058-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-eventostestapp-dev-162058-deployment",
+      "UnauthRoleName": "amplify-eventostestapp-dev-162058-unauthRole",
+      "StackName": "amplify-eventostestapp-dev-162058",
+      "StackId": "arn:aws:cloudformation:us-east-1:943842037059:stack/amplify-eventostestapp-dev-162058/078a43d0-bc54-11ed-9c67-0ac72d01081f",
+      "AmplifyAppId": "d3jxr45nghzwss"
+    }
+  },
+  "api": {
+    "eventostestapp": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDate": "2024-03-05T19:27:09.687Z",
+              "apiKeyExpirationDays": 365,
+              "description": "eventosTestAPI"
+            },
+            "authenticationType": "API_KEY"
+          }
+        },
+        "GraphQLAPIIdOutput": "jnhg7tlgujcdncajo7loyjfknq",
+        "GraphQLAPIEndpointOutput": "https://rinlptc34vejnf77l55pb3mqri.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-qn5vwinnuza7rpcxt5lwfvr24e"
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync",
+      "lastPushTimeStamp": "2023-03-10T23:13:42.658Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventostestapp-dev-162058-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apieventostestapp"
+      }
+    }
+  },
+  "auth": {
+    "eventosTestApp": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 12,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
+          ]
+        },
+        "signupAttributes": [
+          "EMAIL",
+          "NAME",
+          "FAMILY_NAME",
+          "PHONE_NUMBER"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "output": {
+        "CreatedSNSRole": "arn:aws:iam::943842037059:role/sns66b1c957162058-dev",
+        "UserPoolId": "us-east-1_qWvj4uZEP",
+        "AppClientIDWeb": "cre5rg3gdjcrhhpbcdvu89q23",
+        "AppClientID": "66bpon0ji8jgvaiguvq9dldim3",
+        "IdentityPoolId": "us-east-1:ffa5bff6-df33-43e9-9893-5bcac9b9fd42",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:943842037059:userpool/us-east-1_qWvj4uZEP",
+        "IdentityPoolName": "testAuthIdentityPool__dev",
+        "UserPoolName": "eventosTestApp"
+      },
+      "lastPushTimeStamp": "2023-03-10T23:13:42.660Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventostestapp-dev-162058-deployment/amplify-cfn-templates/auth/eventosTestApp-cloudformation-template.json",
+        "logicalId": "autheventosTestApp"
+      }
+    }
+  },
+  "function": {
+    "eventostestapp59acc1d8": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::943842037059:role/eventostestappLambdaRole29af5d55-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:943842037059:function:eventostestapp59acc1d8-dev",
+        "Name": "eventostestapp59acc1d8-dev",
+        "LambdaExecutionRole": "eventostestappLambdaRole29af5d55-dev"
+      },
+      "lastPushTimeStamp": "2023-03-10T23:13:42.661Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventostestapp-dev-162058-deployment/amplify-cfn-templates/function/eventostestapp59acc1d8-cloudformation-template.json",
+        "logicalId": "functioneventostestapp59acc1d8"
+      },
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-eventostestapp-dev-162058-deployment",
+        "s3Key": "amplify-builds/eventostestapp59acc1d8-574273467377386a6b49-build.zip"
+      }
+    }
+  },
+  "storage": {
+    "eventosAppStorage": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3",
+      "output": {
+        "BucketName": "eventos-bucket162058-dev",
+        "Region": "us-east-1"
+      },
+      "lastPushTimeStamp": "2023-03-10T23:13:44.435Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventostestapp-dev-162058-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storageeventosAppStorage"
+      },
+      "lastPushDirHash": "/dR/6xayi/P/zJ97lqoOwmr0Scc="
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "AppSyncApiName": "eventostestapp",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-eventostestapp-dev-162058-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/738e892102eb4ef0275ea5dc32c79fbe1e352c73"
+}
