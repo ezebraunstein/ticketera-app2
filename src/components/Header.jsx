@@ -5,7 +5,9 @@ import CreateEventButton from './CreateEventButton';
 const Header = ({ onButtonClick }) => {
   return (
     <header>
-      <img className="logo" src={palaLogo} alt="LA PALA" width="70px" />
+      <a href="/">
+        <img className="logo" src={palaLogo} alt="LA PALA" width="70px" />
+      </a>
       <CreateEventButton onClick={onButtonClick} />
     </header>
   );
