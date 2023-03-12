@@ -120,9 +120,7 @@ function App() {
                     id="imagenBanner"
                     placeholder="Imagen Banner"
                     value={eventData.imagenBanner}
-                    onChange={(e) =>
-                        setEventsData({ ...eventData, imagenBanner: e.target.value })
-                    }
+                    onChange={(e) => setEventsData({ ...eventData, imagenBanner: e.target.value })}
                 ></input>
                 <input
                     id="imagenMini"
