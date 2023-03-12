@@ -10,6 +10,7 @@ import CreateTypeTicket from "./components/CreateTypeTicket";
 import Footer from "./components/Footer";
 import awsExports from "./aws-exports";
 import { Amplify } from "aws-amplify";
+import OwnerEvents from "./components/OwnerEvents";
 
 
 Amplify.configure(awsExports);
@@ -28,13 +29,14 @@ function App() {
       <ComponentWrapper optionDisplay={displayEvents}>
         <Slider />
         <SearchBar />
-        <EventsGrid />
+        {/* <EventsGrid /> */}
+        <OwnerEvents />
       </ComponentWrapper>
       <ComponentWrapper optionDisplay={!displayEvents}>
         <NewEvent />
       </ComponentWrapper>
       <Footer />
-      {/* <CrearTipoEntrada /> */}
+      {/* <CreateTypeTicket /> */}
     </div>
   );
 }
