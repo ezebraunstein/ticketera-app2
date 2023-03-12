@@ -31,11 +31,11 @@ function App() {
         <SearchBar />
         {/* <EventsGrid /> */}
         <OwnerEvents />
+        <Footer />
       </ComponentWrapper>
       <ComponentWrapper optionDisplay={!displayEvents}>
         <NewEvent />
       </ComponentWrapper>
-      <Footer />
       {/* <CreateTypeTicket /> */}
     </div>
   );

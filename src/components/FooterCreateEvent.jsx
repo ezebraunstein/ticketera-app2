@@ -1,9 +1,9 @@
-import "./Footer.css";
+import "./FooterCreateEvent.css";
 import palaLogo from '../images/pala.png';
 
-export const Footer = (prop) => {
+export const FooterCreateEvent = (prop) => {
     return (
-    <footer className="footerClass">
+    <footer className="footerClass2">
         <div> 
           <span className="footerText">
           &copy; Cooperativa Fort - 2023 
@@ -14,4 +14,4 @@ export const Footer = (prop) => {
     );
   };
 
-export default Footer;
+export default FooterCreateEvent;

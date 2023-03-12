@@ -4,6 +4,8 @@ import { Storage } from 'aws-amplify';
 import { createEvento } from "../graphql/mutations";
 import { v4 as uuid } from "uuid";
 import { API, graphqlOperation } from "aws-amplify";
+import Footer from './Footer';
+import FooterCreateEvent from './FooterCreateEvent';
 
 
 function AddEvento() {
@@ -90,7 +92,8 @@ function AddEvento() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
+    <form className="eventForm" onSubmit={handleSubmit}>
       <label className='labelEvent'>
         Nombre Evento:
         <input className='inputEvent'
@@ -158,6 +161,9 @@ function AddEvento() {
         <button className='buttonEvent' type="submit">Agregar Evento</button>
       </label>
     </form>
+
+    <FooterCreateEvent />
+    </div>
   );
 }
 
