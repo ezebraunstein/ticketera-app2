@@ -6,7 +6,9 @@ import SearchBar from "./components/SearchBar";
 import EventsGrid from "./components/EventsGrid";
 import ComponentWrapper from "./components/ComponentWrapper";
 import NewEvent from "./components/NewEvent";
-import Footer from "./components/Footer";
+//import CreateTypeTicket from "./components/CreateTypeTicket";
+import CrearTipoEntrada from "./functions/functionTypeTicket";
+// import Footer from "./components/Footer";
 import awsExports from "./aws-exports";
 import { Amplify } from "aws-amplify";
 
@@ -23,7 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header onButtonClick={toggleEventsDisplay} />
+      {/* <Header onButtonClick={toggleEventsDisplay} />
       <ComponentWrapper optionDisplay={displayEvents}>
         <Slider />
         <SearchBar />
@@ -32,7 +34,8 @@ function App() {
       <ComponentWrapper optionDisplay={!displayEvents}>
         <NewEvent />
       </ComponentWrapper>
-      <Footer />
+      <Footer /> */}
+      <CrearTipoEntrada />
     </div>
   );
 }

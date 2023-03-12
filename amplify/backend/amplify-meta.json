@@ -33,11 +33,12 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync",
-      "lastPushTimeStamp": "2023-03-10T23:13:42.658Z",
+      "lastPushTimeStamp": "2023-03-11T22:47:42.068Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventostestapp-dev-162058-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apieventostestapp"
-      }
+      },
+      "lastPushDirHash": "lrnOpGD1K12QG21/z7e+kgxzShg="
     }
   },
   "auth": {
@@ -84,11 +85,12 @@
         "IdentityPoolName": "testAuthIdentityPool__dev",
         "UserPoolName": "eventosTestApp"
       },
-      "lastPushTimeStamp": "2023-03-10T23:13:42.660Z",
+      "lastPushTimeStamp": "2023-03-11T22:47:42.072Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventostestapp-dev-162058-deployment/amplify-cfn-templates/auth/eventosTestApp-cloudformation-template.json",
         "logicalId": "autheventosTestApp"
-      }
+      },
+      "lastPushDirHash": "hz24644BD2ULm1TQB2opGHJcS+0="
     }
   },
   "function": {
@@ -103,7 +105,7 @@
         "Name": "eventostestapp59acc1d8-dev",
         "LambdaExecutionRole": "eventostestappLambdaRole29af5d55-dev"
       },
-      "lastPushTimeStamp": "2023-03-10T23:13:42.661Z",
+      "lastPushTimeStamp": "2023-03-11T22:47:42.075Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventostestapp-dev-162058-deployment/amplify-cfn-templates/function/eventostestapp59acc1d8-cloudformation-template.json",
         "logicalId": "functioneventostestapp59acc1d8"
@@ -111,7 +113,12 @@
       "s3Bucket": {
         "deploymentBucketName": "amplify-eventostestapp-dev-162058-deployment",
         "s3Key": "amplify-builds/eventostestapp59acc1d8-574273467377386a6b49-build.zip"
-      }
+      },
+      "lastBuildTimeStamp": "2023-03-11T02:04:19.609Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2023-03-11T02:04:19.630Z",
+      "distZipFilename": "eventostestapp59acc1d8-574273467377386a6b49-build.zip",
+      "lastPushDirHash": "/aRYQ47giML/RmSYo5sx//wzTp8="
     }
   },
   "storage": {
@@ -123,7 +130,7 @@
         "BucketName": "eventos-bucket162058-dev",
         "Region": "us-east-1"
       },
-      "lastPushTimeStamp": "2023-03-10T23:13:44.435Z",
+      "lastPushTimeStamp": "2023-03-11T22:47:44.196Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-eventostestapp-dev-162058-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
         "logicalId": "storageeventosAppStorage"

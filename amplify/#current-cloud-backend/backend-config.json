@@ -78,6 +78,22 @@
           "resourceName": "eventostestapp59acc1d8"
         }
       ]
+    },
+    "AMPLIFY_function_prueba_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "prueba"
+        }
+      ]
+    },
+    "AMPLIFY_function_prueba_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "prueba"
+        }
+      ]
     }
   },
   "storage": {
