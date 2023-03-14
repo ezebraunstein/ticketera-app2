@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import awsExports from "./aws-exports";
 import { Amplify } from "aws-amplify";
 import OwnerEvents from "./components/OwnerEvents";
+import Event from "./components/Event";
 
 
 Amplify.configure(awsExports);
@@ -31,6 +32,7 @@ function App() {
         <SearchBar />
         {/* <EventsGrid /> */}
         <OwnerEvents />
+        {/* <Event /> */}
         <Footer />
       </ComponentWrapper>
       <ComponentWrapper optionDisplay={!displayEvents}>
